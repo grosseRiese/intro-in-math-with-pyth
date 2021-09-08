@@ -8,7 +8,7 @@ This is exercise script file.
 
 print("____________________________________________________")
 def first_exercise():
-    print("==============  Öv_1 ================");
+    print("==============  O1 ================");
     x = 3
     y = 8
     z = 12
@@ -33,7 +33,7 @@ print("____________________________________________________")
 def second_exercise():
 
     import math
-    print("============== Öv_2 ================");
+    print("============== O2 ================");
     
     v1 = 0
     v2 = 30
@@ -55,7 +55,28 @@ def second_exercise():
     print("Radians tan {} : " .format(v2), ( math.tan( math.radians(v2) ) ) )
     print("Radians tan {} : " .format(v3), ( math.tan( math.radians(v3) ) ) )
     print("Radians tan {} : " .format(v4), ( math.tan( math.radians(v4) ) ) )
-    print("Resultatet blir inte helt rätt ...!")
+    print("Resultatet blir inte helt right ...!")
 second_exercise()
 
+print("____________________________________________________")
+def quadratic_equation():
+    import math
+    print("============== O3 ================");
+    # x^2 +px + q = 0
+    #x = -p/2 (+/-) sqrt( (p/2)^2 -q ) 
+    
+    p = int(input("Input p coefficient : ") )
+    q = int(input("Input q coefficient : ") )
+    D =  ( pow((p/2),2) - q )
+    # (p/2)**2 ==  pow((p/2)
+    
+    x_1 = -(p/2)+ math.sqrt( abs(D) )
+    x_2 = -(p/2)- math.sqrt( abs(D) )
+    
+    print("First root to x: ", x_1)
+    print("Second root to x: ", x_2)  
+quadratic_equation()
+
+#print("Power ", pow(3,2)) 
+#print("** the same pow()  ", 4 ** 2)
 print("____________________________________________________")
