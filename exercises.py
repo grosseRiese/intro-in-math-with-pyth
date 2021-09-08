@@ -72,11 +72,35 @@ def quadratic_equation():
     
     x_1 = -(p/2)+ math.sqrt( abs(D) )
     x_2 = -(p/2)- math.sqrt( abs(D) )
-    
+    print("   ")
+    print("Equqtion: x = -p/2 (+/-) sqrt( (p/2)^2 -q ) has 2 solution:")
+    print("   ")
     print("First root to x: ", x_1)
-    print("Second root to x: ", x_2)  
+    print("Second root to x: ", x_2) 
+    print("  ")
 quadratic_equation()
 
 #print("Power ", pow(3,2)) 
 #print("** the same pow()  ", 4 ** 2)
+
+print("____________________________________________________")
+def feed_cathetus():
+    print("============== O4 ================");
+    import math
+    
+    cath_one = int(input("Input cath_one : ") )
+    cath_two = int(input("Input cath_two : ") )
+    hypotenuse = math.sqrt(cath_one**2 + cath_two**2 )
+   
+    v1 = round( math.degrees (math.acos( cath_one/hypotenuse ) ), 2)
+    u = 90 - v1
+    print("   ")
+    print("Hypotenuse in right-angled triangle {} length-unit \n".format(hypotenuse))
+    print("The angel to nearby cathetus : {} ° ".format(v1) )
+    print("The opposite angle : {} ° ".format(u) )
+    print("   ")
+    print("Om kateterna är {} och {}, så är hypotenusan {} \n och de spetsiga vinklarna" 
+          " {}° och {}°".format(cath_one,cath_two,hypotenuse,u,v1) )
+feed_cathetus()
+
 print("____________________________________________________")
