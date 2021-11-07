@@ -285,6 +285,44 @@ min_integral_upp3_c(F_c,a=0,b=1,n=10,k=2) # right
 min_integral_upp3_c(F_c,a=0,b=1,n=10,k=3) # mid
 min_integral_upp3_c(F_c,a=0,b=1,n=10,k=4) # trapeziodal
 print("==========================================================")
+print("=============== uppgift 4 ===================================")
+
+wy = lambda x: np.tan(x**0.5)
+def min_integral_upp4(f,a,b,n,k):
+    dx = calculate_dx(a,b,n)
+    #x = np.linspace(a,b,n+1)
+    
+    if k == 1: #left
+        x = np.linspace(a,b-dx,n) #x_left
+        x_left = x[:-1]
+        
+        #return np.sum(f(x_left)*dx)
+        print("Left_upp_4 : ",np.sum(f(x_left)*dx))
+    elif k == 2: #right
+        x = np.linspace(dx,b,n) #x_right
+        x_right = x[1:]
+        #return np.sum(f(x_right)*dx)
+        print("Right_upp_4  : ",np.sum(f(x_right)*dx) )
+    elif k == 3: # midpunkts
+        x = np.linspace(dx/2,b-dx/2,n)
+        x_mid = (x[:-1] + x[1:])/2
+        #return np.sum(f(x_mid)*dx)
+        print("Midpunkts_upp_4  : ", np.sum(f(x_mid)*dx) )
+    elif k == 4: #trapeziodal
+        x = np.linspace(a,b,n+1) # N+1 points make N subintervals
+        y = f(x)
+        y_right = y[1:] # right endpoints 
+        y_left = y[:-1] # left endpoints
+        #return (dx/2) * np.sum(y_right + y_left)
+        print("Trapeziodal_upp_4  : ", (dx/2) * np.sum(y_right + y_left) )
+    else:
+        raise ValueError("Method must be 'left', 'right' or 'midpoint'.")
+min_integral_upp4(wy,a=0,b=1,n=100,k=1) # left
+min_integral_upp4(wy,a=0,b=1,n=100,k=2) # right
+min_integral_upp4(wy,a=0,b=1,n=100,k=3) # mid
+min_integral_upp4(wy,a=0,b=1,n=100,k=4) # trapeziodal
+print("==========================================================")
+
 
 
 
